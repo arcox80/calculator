@@ -1,9 +1,43 @@
 var state = {
     currentEntry: "", //string to be changed to number
     previousEntry: [], //ints and floats
-    operators: []
-    
+    operators: [],
+    isFloat: false,
+    total: 0
 };
+
+/* See if this logic makes sense to you guys. Check the value and then call
+the appropriate function on how to handle it. If the logic makes sense, then
+I think it is also a good way to break the project down into pieces that
+we can each work on and then push to the master.
+*/
+
+function clearButtonHandler(value) {}
+
+function operatorButtonHandler(value) {}
+
+function equalsButtonHandler(value) {}
+
+function decimalButtonHandler(value) {}
+
+function numberButtonHandlers(value) {}
+
+function calculatorListener() {
+  $('button').click(function (event) {
+    var value = $(this).attr("value");
+    if (value = 'ac' || 'ce') {
+      clearButtonHandler(value);
+    } else if (value = '+' || '-' || '*' || '/') {
+      operatorButtonHandler(value);
+    } else if (value = '=') {
+      equalsButtonHandler(value);
+    } else if (value = '.') {
+      decimalButtonHandler(value);
+    } else {
+      numberButtonHandlers(value);
+    }
+  });
+}
 
 /*
 1. event listener for each button
@@ -39,12 +73,8 @@ var state = {
     3. Move the total into the display and currentEntry.
 */
 
-var makeListener = function(number){
-  $("button").click(function(){
-    console.log(this.value);
-  })
-}
-
-$(document).ready(function () {
-    console.log("ready!");
+//I double checked and $(document).ready is deprecated. Below is updated format
+$(function () {
+  console.log('ready!');
+  calculatorListener();
 });
