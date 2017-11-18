@@ -12,29 +12,39 @@ I think it is also a good way to break the project down into pieces that
 we can each work on and then push to the master.
 */
 
-function clearButtonHandler(value) {}
+function clearButtonsHandler(value) {
+  //your code goes here
+}
 
-function operatorButtonHandler(value) {}
+function operatorButtonsHandler(value) {
+  //your code goes here
+}
 
-function equalsButtonHandler(value) {}
+function equalsButtonHandler(value) {
+  //your code goes here
+}
 
-function decimalButtonHandler(value) {}
+function decimalButtonHandler(value) {
+  //your code goes here
+}
 
-function numberButtonHandlers(value) {}
+function numberButtonsHandler(value) {
+  //your code goes here
+}
 
 function calculatorListener() {
   $('button').click(function (event) {
     var value = $(this).attr("value");
     if (value = 'ac' || 'ce') {
-      clearButtonHandler(value);
+      clearButtonsHandler(value);
     } else if (value = '+' || '-' || '*' || '/') {
-      operatorButtonHandler(value);
+      operatorButtonsHandler(value);
     } else if (value = '=') {
       equalsButtonHandler(value);
     } else if (value = '.') {
       decimalButtonHandler(value);
     } else {
-      numberButtonHandlers(value);
+      numberButtonsHandler(value);
     }
   });
 }
@@ -73,7 +83,7 @@ function calculatorListener() {
     3. Move the total into the display and currentEntry.
 */
 
-//I double checked and $(document).ready is deprecated. Below is updated format
+//I double checked and $(document).ready is deprecated. Below is the updated format
 $(function () {
   console.log('ready!');
   calculatorListener();
