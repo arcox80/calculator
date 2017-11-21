@@ -14,7 +14,7 @@ we can each work on and then push to the master.
 
 function clearButtonsHandler(value) {
   $('.currentDisplay').text('0');
-  state.currentEntry = '0';
+  state.currentEntry = '';
   state.isFloat = false;
   if (value === 'ac') {
     state.previousEntry = [];
