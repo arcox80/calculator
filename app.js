@@ -6,14 +6,21 @@ var state = {
     total: 0
 };
 
-/* See if this logic makes sense to you guys. Check the value and then call
+/* See if this logic makes sense to you all. Check the value and then call
 the appropriate function on how to handle it. If the logic makes sense, then
 I think it is also a good way to break the project down into pieces that
 we can each work on and then push to the master.
 */
 
 function clearButtonsHandler(value) {
-  //your code goes here
+  $('.currentDisplay').text('0');
+  state.currentEntry = '0';
+  state.isFloat = false;
+  if (value === 'ac') {
+    state.previousEntry = [];
+    state.operators = [];
+    state.total = 0;
+  }
 }
 
 function operatorButtonsHandler(value) {
