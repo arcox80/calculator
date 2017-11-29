@@ -80,18 +80,15 @@ function numberButtonsHandler(value) {
 function calculatorListener() {
   $("button").click(function(event) {
     var value = $(this).attr("value");
-    if (value === "ac" || value === "ce") {
+
+    if (value === 'ac' || value === 'ce') {
       clearButtonsHandler(value);
-    } else if (
-      value === "+" ||
-      value === "-" ||
-      value === "*" ||
-      value === "/"
-    ) {
+      //found this jQuery method that makes it easier to check multiple values instead of writing 'value ===' a bunch of times
+    } else if ($.inArray(value, ['+', '-', '*', '/']) >= 0) {
       operatorButtonsHandler(value);
-    } else if (value === "=") {
+    } else if (value === '=') {
       equalsButtonHandler(value);
-    } else if (value === ".") {
+    } else if (value === '.') {
       decimalButtonHandler(value);
     } else {
       numberButtonsHandler(value);
